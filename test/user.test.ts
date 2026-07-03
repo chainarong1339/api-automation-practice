@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { baseURL, createNote } from './helpers';
+import { baseURL, createNote } from '../utils/api-client';
 import notes from '../test-data/notes.json';
 
 
