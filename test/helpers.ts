@@ -1,6 +1,6 @@
 import request from 'supertest';
 
-export const baseURL = 'https://practice.expandtesting.com/notes/api';
+export const baseURL = process.env.API_BASE_URL || 'https://practice.expandtesting.com/notes/api';
 
 export async function createNote(token: string) {
   const res = await request(baseURL)
