@@ -1,6 +1,6 @@
 import request from 'supertest';
 import { baseURL, createNote } from './helpers';
-
+import notes from '../test-data/notes.json';
 
 
 describe('notes API', () => {
@@ -78,11 +78,8 @@ describe('notes API', () => {
         expect(res.status).toBe(401);
     });
 
-    it.each([
-        'abc',
-        '',
-        '123',
-    ])('POST /notes category "%s" → 400', async (category) => {
+    it.each(notes.invalidCategories)('POST /notes category "%s" → 400', async (category) => {
+
         const res = await request(baseURL)
             .post('/notes')
             .set('x-auth-token', token)

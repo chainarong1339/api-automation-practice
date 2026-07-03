@@ -1,0 +1,8 @@
+{
+  "valid": {
+    "title": "Note สำหรับเทส",
+    "description": "สร้างจาก helper",
+    "category": "Home"
+  },
+  "invalidCategories": ["abc", "", "123"]
+}

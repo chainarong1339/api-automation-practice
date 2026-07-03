@@ -1,4 +1,6 @@
 import request from 'supertest';
+import notes from '../test-data/notes.json';
+
 
 export const baseURL = process.env.API_BASE_URL || 'https://practice.expandtesting.com/notes/api';
 
@@ -7,10 +9,7 @@ export async function createNote(token: string) {
     .post('/notes')
     .set('x-auth-token', token)
     .type('form')
-    .send({
-      title: 'Note สำหรับเทส',
-      description: 'สร้างจาก helper',
-      category: 'Home',
-    });
+    .send(notes.valid);
+
   return res.body.data;
 }
