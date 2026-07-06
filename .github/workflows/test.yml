@@ -12,3 +12,6 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm test
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+
